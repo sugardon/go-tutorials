@@ -1,3 +1,6 @@
+CLANG ?= clang-14
+CFLAGS := -O2 -g -Wall -Werror $(CFLAGS)
+
 all: fmt
 	go test ./...
 
@@ -10,3 +13,10 @@ fmt: go.mod
 
 go.mod:
 	go mod init github.com/sugardon/go-tutorials
+
+# $BPF_CLANG is used in go:generate invocations.
+generate: export BPF_CLANG := $(CLANG)
+generate: export BPF_CFLAGS := $(CFLAGS)
+generate:
+	go generate ./cmd/ebpf-xdp-test
+
