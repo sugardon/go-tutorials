@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  docker-ebpf:
+    build:
+      context: .
+      dockerfile: ./build/docker-ebpf/Dockerfile
+    tty: true
+    stdin_open: true
+    volumes:
+      - .:/usr/src/app
