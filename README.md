@@ -8,9 +8,10 @@
    ```
 1. exec
    ```bash
-   docker-compose exec docker-ebpf /bin/sh
+   docker-compose exec docker-ebpf /bin/bash
    # inside docker container
-   # go run ./cmd/ebpf-xdp-test/
+   # # make generate 
+   # # go run ./cmd/ebpf-xdp-test/ eth0
    ```
 1. down
    ```bash

@@ -7,5 +7,6 @@ services:
       dockerfile: ./build/docker-ebpf/Dockerfile
     tty: true
     stdin_open: true
+    privileged: true
     volumes:
-      - .:/usr/src/app
+      - .:/workspace
